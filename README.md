@@ -25,4 +25,4 @@ Given the extremely limited dataset and the absence of several standard preproce
 
 Accordingly, users are strongly advised to refrain from making real-world property transactions, financial decisions, or other consequential life choices based upon its predictions.
 
-<strong>In simple terms, please do not sell your house because a Python script told you it is worth $67,420.</strong> 🏠
+<h3><strong>In simple terms, please do not sell your house because a Python script told you it is worth $67,420.</strong> 🏠</h3>
