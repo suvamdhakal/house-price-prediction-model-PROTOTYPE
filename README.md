@@ -3,8 +3,11 @@ Prototype implementation of a house price prediction model using multivariable l
 
 Prototype Limitations:
   -Very small dataset with only 3 training examples
+  
   -No feature scaling or feature engineering
+  
   -No train/test split or proper model evaluation
+  
   -Uses only 4 basic features: size, bedrooms, floors, and house age
 
 This prototype is mainly for learning and experimenting with the fundamentals of multivariable linear regression.
