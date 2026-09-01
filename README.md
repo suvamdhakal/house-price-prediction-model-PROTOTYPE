@@ -13,6 +13,12 @@ Prototype Limitations:
 
 This prototype is mainly for learning and experimenting with the fundamentals of multivariable linear regression.
 
+<h3>OUTPUT
+  
+  <img width="948" height="278" alt="image" src="https://github.com/user-attachments/assets/be5174fd-6da5-4b13-ac61-a5094a377f81" />
+
+</h3>
+
 <h3>NOTE</h3>
 
 Although this prototype represents a significant improvement over the previous model by incorporating multiple features rather than relying solely on house size, it currently operates on a substantially smaller dataset. The previous model was trained on a larger set of observations, whereas this prototype uses only <strong>3 training examples</strong>.
