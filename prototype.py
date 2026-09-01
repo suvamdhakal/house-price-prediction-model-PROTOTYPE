@@ -53,7 +53,7 @@ alpha = 5.0e-7
 
 w_final, b_final = gradient_descent(X_train, y_train, initial_w, initial_b, alpha, iterations)
 
-print(f"b, w found by gradient descent: {b_final:.2f}, {w_final}")
+print(f"b, w found by gradient descent: {b_final}, {w_final}")
 m, n = X_train.shape
 for i in range(m):
     print(f"prediction: {np.dot(X_train[i], w_final)+ b_final:.2f}, target value = {y_train[i]}")
