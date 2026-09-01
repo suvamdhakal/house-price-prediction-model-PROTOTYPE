@@ -66,4 +66,4 @@ x = np.zeros(n)
 for i in range(n):
     x[i] = int(input("enter the values of size, no of bedrooms, no of floors and age of the house "))
 
-print(f"the predicted price of house is {(np.dot(w_final, x) + b_final)*1000} dollars")
+print(f"the predicted price of house is ${((np.dot(w_final, x) + b_final)*1000):.2f}")
