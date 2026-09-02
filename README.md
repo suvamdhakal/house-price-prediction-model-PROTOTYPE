@@ -24,7 +24,7 @@ This prototype is mainly for learning and experimenting with the fundamentals of
 
 <h3>NOTE</h3>
 
-Although this prototype represents a significant improvement over the previous model by incorporating multiple features rather than relying solely on house size, it currently operates on a substantially smaller dataset. The previous model was trained on a larger set of observations, whereas this prototype uses only <strong>3 training examples</strong>.
+Although this prototype represents a significant improvement over the previous model by incorporating multiple features rather than relying solely on house size, it currently operates on a substantially smaller dataset. 
 
 Consequently, while the present model is more sophisticated in terms of feature representation, its limited dataset significantly restricts its ability to generalize and produce reliable predictions. The final model is currently under development and will address these limitations through a substantially larger dataset, improved preprocessing, and additional feature-engineering techniques.
 
