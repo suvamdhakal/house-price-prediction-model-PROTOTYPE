@@ -3,9 +3,11 @@ Prototype implementation of a house price prediction model using multivariable l
 
 Prototype Limitations:
 
-  -Very small dataset with only 3 training examples
+  -Very small dataset with only 20 training examples
   
-  -No feature scaling or feature engineering
+  -No feature scaling(fixed as of 16:15 GMT+5:45 September 2, 2026)
+  
+  -No feature engineering
   
   -No train/test split or proper model evaluation
   
@@ -15,7 +17,8 @@ This prototype is mainly for learning and experimenting with the fundamentals of
 
 <h3>OUTPUT
   
-  <img width="948" height="278" alt="image" src="https://github.com/user-attachments/assets/be5174fd-6da5-4b13-ac61-a5094a377f81" />
+<img width="973" height="648" alt="image" src="https://github.com/user-attachments/assets/95ebae69-7beb-4b90-80fc-fd45baaa48a0" />
+
 
 </h3>
 
