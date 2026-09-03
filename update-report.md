@@ -7,7 +7,7 @@
 
 **Changes:**
 
-* Added feature scaling to the model using z score normalization.
+* Added feature scaling to the model using Z-score normalization.
 
 ---
 
