@@ -1,23 +1,43 @@
 # house-price-prediction-model-PROTOTYPE
 Prototype implementation of a house price prediction model using multivariable linear regression, NumPy, and gradient descent. This is an early-stage prototype for learning and experimentation, and the final, more advanced model is currently under development.
 
-Prototype Limitations:
+## Prototype Limitations
 
-  -Very small dataset with only 20 training examples
-  
-  -No feature scaling(fixed as of 16:15 GMT+5:45 September 2, 2026)
-  
-  -No feature engineering
-  
-  -No train/test split or proper model evaluation
-  
-  -Uses only 4 basic features: size, bedrooms, floors, and house age
+### Data Limitations
+
+* Very small dataset with only 20 training examples.
+* Uses synthetic data rather than real-world house-price data.
+* Limited feature representation. The model currently uses only size, bedrooms, floors, and house age, along with engineered features derived from them.
+* Does not include important real-world factors such as location, land area, bathrooms, parking, furnishing, construction quality, road access, and neighborhood.
+* No handling of missing data or outliers.
+* Predictions may be unreliable for inputs outside the range of the training data.
+
+### Model Limitations
+
+* No train/test split or proper model evaluation.
+* No regularization to reduce potential overfitting.
+* No hyperparameter tuning.
+* No comparison against a baseline or simpler model to determine whether feature engineering actually improves performance.
+* Provides a single prediction without any uncertainty or confidence estimate.
+
+### Implementation Limitations
+
+* No input validation for unrealistic or invalid user inputs.
+* Gradient descent and other calculations currently rely heavily on Python loops, which may become inefficient with larger datasets.
+* The current model is a basic linear regression model with manually engineered polynomial and interaction features, limiting its ability to capture more complex relationships.
+
+### Resolved Limitations
+
+* ~~No feature scaling~~ (fixed as of 16:15 GMT+5:45, September 2, 2026).
+* ~~No feature engineering~~ (fixed as of 13:30 GMT+5:45, September 3, 2026).
+* ~~Uses only 4 basic features~~. The model now uses 9 features, including engineered features such as `size²`, `age²`, `size × bedrooms`, `size × floors`, and `size × age` (fixed as of 13:30 GMT+5:45, September 3, 2026).
 
 This prototype is mainly for learning and experimenting with the fundamentals of multivariable linear regression.
 
 <h3>OUTPUT
   
-<img width="973" height="648" alt="image" src="https://github.com/user-attachments/assets/95ebae69-7beb-4b90-80fc-fd45baaa48a0" />
+<img width="1076" height="696" alt="image" src="https://github.com/user-attachments/assets/efeb0d80-4d40-4e0e-92a9-440baf7b0cf7" />
+
 
 
 </h3>
