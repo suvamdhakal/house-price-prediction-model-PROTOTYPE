@@ -34,13 +34,6 @@ Prototype implementation of a house price prediction model using multivariable l
 
 This prototype is mainly for learning and experimenting with the fundamentals of multivariable linear regression.
 
-<h3>OUTPUT
-  
-<img width="1076" height="696" alt="image" src="https://github.com/user-attachments/assets/efeb0d80-4d40-4e0e-92a9-440baf7b0cf7" />
-
-
-
-</h3>
 
 <h3>NOTE</h3>
 
