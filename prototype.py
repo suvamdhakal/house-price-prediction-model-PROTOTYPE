@@ -24,6 +24,20 @@ X_train = np.array([
     [1550, 3, 2, 15]
 ])
 
+X_eng = np.c_[
+    X_train[:, 0],                   #size
+    X_train[:, 1],                   #bedrooms
+    X_train[:, 2],                   #floors
+    X_train[:, 3],                   #age
+
+    X_train[:, 0] ** 2,              #size squared
+    X_train[:, 3] ** 2,              #age squared
+    X_train[:, 0] * X_train[:, 1],   #size * bedrooms
+    X_train[:, 0] * X_train[:, 2],   #size * floors
+    X_train[:, 0] * X_train[:, 3]   #size * age
+    
+]
+
 y_train = np.array([
     460,
     232,
@@ -48,7 +62,7 @@ y_train = np.array([
 ])
 
 b_init = 0
-w_init = np.zeros(X_train.shape[1])
+w_init = np.zeros(X_eng.shape[1])
 
 def zscore_normalize_features(X):
 
@@ -59,7 +73,7 @@ def zscore_normalize_features(X):
 
     return X_normalized, mean, sd
 
-X_norm, mean, sd = zscore_normalize_features(X_train)
+X_norm, mean, sd = zscore_normalize_features(X_eng)
 
 
 def compute_cost(X,y,w,b):
@@ -121,11 +135,24 @@ print(w_final)
 print(b_final)
 
 
-x = np.zeros(n)
+size = float(input("enter the size "))
+bedrooms = int(input("enter the number of bedrooms "))
+floors = int(input("enter the number of floors "))
+age = int(input("enter the age of the house "))
 
-for i in range(n):
-    x[i] = float(input("enter the values of size, no of bedrooms, no of floors and age of the house "))
+x = np.array([
+    size, 
+    bedrooms,
+    floors,
+    age,
+    size ** 2,
+    age ** 2,
+    size * bedrooms,
+    size * floors,
+    size * age
+])
 
 x_input_norm = (x - mean) / sd
 print(f"the predicted price of house is ${((np.dot(w_final, x_input_norm) + b_final)*1000):.2f}")
+
 
