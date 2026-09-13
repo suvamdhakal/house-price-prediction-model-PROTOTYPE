@@ -1,4 +1,5 @@
 # house-price-prediction-model-PROTOTYPE
+
 Prototype implementation of a house price prediction model using multivariable linear regression, NumPy, and gradient descent. This is an early-stage prototype for learning and experimentation, and the final, more advanced model is currently under development.
 
 ## Prototype Limitations
@@ -15,9 +16,9 @@ Prototype implementation of a house price prediction model using multivariable l
 ### Model Limitations
 
 * No train/test split or proper model evaluation.
-* No regularization to reduce potential overfitting.
 * No hyperparameter tuning.
-* No comparison against a baseline or simpler model to determine whether feature engineering actually improves performance.
+* No comparison against a baseline or simpler model to determine whether feature engineering or regularization actually improves performance.
+* The current regularization parameter has not been selected through validation.
 * Provides a single prediction without any uncertainty or confidence estimate.
 
 ### Implementation Limitations
@@ -31,15 +32,15 @@ Prototype implementation of a house price prediction model using multivariable l
 * ~~No feature scaling~~ (fixed as of 16:15 GMT+5:45, September 2, 2026).
 * ~~No feature engineering~~ (fixed as of 13:30 GMT+5:45, September 3, 2026).
 * ~~Uses only 4 basic features~~. The model now uses 9 features, including engineered features such as `size²`, `age²`, `size × bedrooms`, `size × floors`, and `size × age` (fixed as of 13:30 GMT+5:45, September 3, 2026).
+* ~~No regularization~~. L2 regularization has now been implemented in both the cost function and gradient calculation to reduce the effect of excessively large weights (fixed as of 19:00 GMT +5:45, September 14, 2026).
 
 This prototype is mainly for learning and experimenting with the fundamentals of multivariable linear regression.
 
-
 <h3>NOTE</h3>
 
-Although this prototype represents a significant improvement over the previous model by incorporating multiple features rather than relying solely on house size, it currently operates on a substantially smaller dataset. 
+Although this prototype represents a significant improvement over the previous model by incorporating multiple features, feature engineering, feature scaling, and L2 regularization, it currently operates on a substantially smaller dataset.
 
-Consequently, while the present model is more sophisticated in terms of feature representation, its limited dataset significantly restricts its ability to generalize and produce reliable predictions. The final model is currently under development and will address these limitations through a substantially larger dataset, improved preprocessing, and additional feature-engineering techniques.
+Consequently, while the present model is more sophisticated in terms of feature representation and training, its limited dataset significantly restricts its ability to generalize and produce reliable predictions. The final model is currently under development and will address these limitations through a substantially larger dataset, improved preprocessing, additional feature-engineering techniques, proper model evaluation, and hyperparameter tuning.
 
 <h3>DISCLAIMER</h3>
 
