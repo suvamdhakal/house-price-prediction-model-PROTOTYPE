@@ -74,7 +74,29 @@ Feature scaling puts the features on a more comparable scale, allowing gradient 
 
 ---
 
+## Output 4
 
-The outputs demonstrate how the model evolved from a basic linear regression prototype into a more expressive model with feature scaling and engineered polynomial and interaction features.
+**Model version:** Regularized feature-engineered model
+
+**Changes:**
+
+* Added L2 regularization to the model.
+* Added a regularization parameter (`Lambda`) to control the strength of regularization.
+* Updated the cost function to include the L2 regularization term.
+* Updated the gradient calculation to include the regularization term for the model weights.
+* The bias term is not regularized.
+* Continued using Z-score normalization and the previously added engineered features.
+
+**Purpose:**
+
+L2 regularization penalizes excessively large weight values, helping reduce the risk of overfitting while retaining the previously added feature engineering and scaling.
+
+### Output
+
+<img width="1142" height="713" alt="Output 4" src="https://github.com/user-attachments/assets/a02425f7-b228-4a17-9c93-35c43ee7dc80" />
+
+---
+
+The outputs demonstrate how the model evolved from a basic linear regression prototype into a more expressive and regularized model through the addition of feature scaling, polynomial and interaction features, and L2 regularization.
 
 > **Note:** Changes in predicted values do not necessarily mean that the newer model is more accurate. Proper evaluation on unseen test data is required to determine whether each modification actually improves model performance.
