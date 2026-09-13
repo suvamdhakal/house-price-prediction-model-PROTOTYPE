@@ -63,6 +63,7 @@ y_train = np.array([
 
 b_init = 0
 w_init = np.zeros(X_eng.shape[1])
+Lambda_init = 1
 
 def zscore_normalize_features(X):
 
@@ -76,23 +77,27 @@ def zscore_normalize_features(X):
 X_norm, mean, sd = zscore_normalize_features(X_eng)
 
 
-def compute_cost(X,y,w,b):
+def compute_cost_regularized(X,y,w,b, Lambda_):
     cost = 0.0
-    m = X.shape[0]
+    cost_reg = 0.0
+    m, n = X.shape
 
     for i in range(m):
         cost += (np.dot(X[i], w)+b - y[i])**2
 
+    for j in range(n):
+        cost_reg += w[j]**2
+
+    cost_reg = cost_reg * Lambda_/(2 * m)
     cost = cost/(2*m)
-    return cost
+    return cost + cost_reg
 
-cost = compute_cost(X_norm, y_train, w_init, b_init)
+cost = compute_cost_regularized(X_norm, y_train, w_init, b_init, Lambda_init)
 
-def compute_gradient(X,y,w,b):
+def compute_gradient(X,y,w,b,Lambda_):
     m,n = X.shape
     dj_dw = np.zeros(n)
     dj_db = 0
-    err = 0
 
     for i in range(m):
         err = (np.dot(X[i], w)+b) - y[i]
@@ -105,12 +110,15 @@ def compute_gradient(X,y,w,b):
     dj_db = dj_db/m
     dj_dw = dj_dw/m
 
+    for j in range(n):
+        dj_dw[j] += (Lambda_ / m) * w[j]
+
     return dj_dw, dj_db
 
-def gradient_descent(X,y,w,b,alpha,num_iters):
+def gradient_descent(X,y,w,b,alpha,num_iters, Lambda_):
 
     for i in range(num_iters):
-        dj_dw, dj_db = compute_gradient(X, y, w, b)
+        dj_dw, dj_db = compute_gradient(X, y, w, b,Lambda_)
         w = w - alpha * dj_dw
         b = b - alpha * dj_db
 
@@ -123,7 +131,7 @@ initial_b = 0
 iterations = 10000
 alpha = 0.1
 
-w_final, b_final = gradient_descent(X_norm, y_train, initial_w, initial_b, alpha, iterations)
+w_final, b_final = gradient_descent(X_norm, y_train, initial_w, initial_b, alpha, iterations, Lambda_init)
 
 print(f"b, w found by gradient descent: {b_final}, {w_final}")
 m, n = X_norm.shape
@@ -154,5 +162,3 @@ x = np.array([
 
 x_input_norm = (x - mean) / sd
 print(f"the predicted price of house is ${((np.dot(w_final, x_input_norm) + b_final)*1000):.2f}")
-
-
