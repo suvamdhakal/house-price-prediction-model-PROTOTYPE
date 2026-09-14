@@ -76,7 +76,7 @@ Feature scaling puts the features on a more comparable scale, allowing gradient 
 
 ## Output 4
 
-**Model version:** Regularized feature-engineered model
+**Model version:** Regularized model
 
 **Changes:**
 
